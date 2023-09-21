@@ -23,7 +23,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = os.environ.get("ACCESS_TOKEN_EXPIRE_MINUTES")
 
 
 # Signup to get you token
-@app.post("/api/signup", tags=['User'], description="Register with your username and password to get a token to use the API")
+@app.post("/api/signup", description="Register with your username and password to get a token to use the API")
 async def signup(user: UserCreate):
     try:
         db_user = create_user(user)
@@ -38,6 +38,8 @@ async def signup(user: UserCreate):
 
     for key, value in db_user.items():
         key_dict[key] = value
+
+    key_dict["token_type"] = "bearer"
     return key_dict
 
 # Login to get a new token the previous one epires
