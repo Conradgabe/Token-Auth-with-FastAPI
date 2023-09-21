@@ -16,7 +16,7 @@ The API provides the following endpoints for managing persons and movie:
 - For the `POST /api/movie`endpoint, send a JSON request body with the title, protagonist, description, series_or_movie, genre and rating field.
 - For the `GET /api/movie` endpoint, you would receive a JSON response with the details of the movies in the database.
 ​
-#### Create a New User(Signup)
+#### Create a New User(Signup) and generate Token
 ```
 curl -X 'POST' \
  'http://127.0.0.1:8000/api/signup' \
