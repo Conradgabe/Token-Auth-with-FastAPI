@@ -30,7 +30,7 @@ pip install sqlalchemy
   ### 2. Navigate to your Project Directory
   change your working directory to the cloned project folder
   ```
-  cd Token-Auth-with-FastAPI/tokenAuth
+  cd Token-Auth-with-FastAPI/
   ```
   ### 3. Install Dependencies
   ```
