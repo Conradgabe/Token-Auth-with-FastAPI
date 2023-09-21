@@ -44,7 +44,7 @@ async def signup(user: UserCreate):
 
 # Login to get a new token the previous one epires
 @app.post("/api/login", description="Login again to get a new token as previous token will expire", tags=['User'])
-async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
+async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     db: Session = next(get_db())
 
     user = authenticate_user(db, username=form_data.username, password=form_data.password)
@@ -61,7 +61,7 @@ async def login(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
 
 # Get all Movies in the database
 @app.get("/api/movie", tags=['Movies'], response_model=list[MovieBaseCreate], description="Get all the movies and its detail")
-async def get_movies(limit: Annotated[int, Depends(get_current_user)]):
+async def get_movies(limit: int = Depends(get_current_user)):
     db: Session = next(get_db())
 
     return db.query(Movies).offset(0).limit(100).all()
@@ -69,7 +69,7 @@ async def get_movies(limit: Annotated[int, Depends(get_current_user)]):
 
 # Add a new Movie to the database
 @app.post("/api/movie", tags=['Movies'], response_model=MovieBaseCreate, description="Add your favourite movie and its detail")
-async def add_movies(movie: MovieBaseCreate, sub: Annotated[str, Depends(get_current_user)]):
+async def add_movies(movie: MovieBaseCreate, sub: str = Depends(get_current_user)):
     db: Session = next(get_db())
     
     db_movie = Movies(title=movie.title, protagonist=movie.protagonist,
