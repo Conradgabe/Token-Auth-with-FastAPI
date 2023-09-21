@@ -29,11 +29,11 @@ curl -X 'POST' \
 ```
 
 - **Request Format**
-
+**Testuser details**
 ```
     {
         "username": "Peter Drury",
-        "password": "**********"
+        "password": "123456"
    }
 ```
 ​
@@ -48,6 +48,7 @@ curl -X 'POST' \
 ​
 #### Get all Movie
 ##### `Authorisation: Bearer <token>`
+##### `Token used in this documentation is not valid, the tokens will expire after 30 minute`
 ​
 ```
 curl -X 'GET' \
