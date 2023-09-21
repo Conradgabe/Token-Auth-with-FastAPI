@@ -29,7 +29,6 @@ curl -X 'POST' \
 ```
 
 - **Request Format**
-**Testuser details**
 ```
     {
         "username": "Peter Drury",
