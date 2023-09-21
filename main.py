@@ -3,7 +3,6 @@ from sqlalchemy.orm import Session
 from dotenv import load_dotenv
 from fastapi.security import OAuth2PasswordRequestForm
 from datetime import timedelta 
-from typing import Annotated
 
 from utils import (create_user, get_db, get_current_user,
                    create_access_token, authenticate_user)
