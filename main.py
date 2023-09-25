@@ -59,7 +59,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
     return data
 
 # Get all Movies in the database
-@app.get("/api/movie", tags=['Movies'], response_model=list[MovieBaseCreate], description="Get all the movies and its detail")
+@app.get("/api/movie", tags=['Movies'], description="Get all the movies and its detail")
 async def get_movies(limit: int = Depends(get_current_user)):
     db: Session = next(get_db())
 
