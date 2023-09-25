@@ -1,5 +1,10 @@
 # Token-Auth-with-FastAPI
 
+**GITHUB REPOSITORY**: "[https://github.com/Conradgabe/Token-Auth-with-FastAPI](https://github.com/Conradgabe/Token-Auth-with-FastAPI)"
+
+**HOSTED ENDPOINT**: "[https://tkauth.onrender.com/](https://tkauth.onrender.com/)"
+
+**DOCUMENTATION URL**: "[https://github.com/Conradgabe/Token-Auth-with-FastAPI/blob/main/DOCUMENTATION.md](https://github.com/Conradgabe/Token-Auth-with-FastAPI/blob/main/DOCUMENTATION.md)"
 
 # Installation and Setup
 
