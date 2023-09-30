@@ -9,7 +9,8 @@ from utils import (create_user, get_db, get_current_user,
 
 from models import Base, Person, Movies
 from schema import UserCreate, MovieBaseCreate
-from database import SessionLocal, engine
+from database import SessionLocal, engine#
+import uvicorn
 import os
 
 load_dotenv()
@@ -80,3 +81,7 @@ async def add_movies(movie: MovieBaseCreate, sub: str = Depends(get_current_user
     db.refresh(db_movie)
 
     return db_movie
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
